@@ -149,15 +149,15 @@ encryption=(
 
 
 text=(             
-    # libreoffice-fresh # office apps
+    libreoffice-fresh # office apps
     obsidian        # note taking app
     # espeak-ng       # text to speach (TTS)
-    # festival festival-us #  text to speach (TTS)
+    festival festival-us #  text to speach (TTS)
     # zathura zathura-pdf-mupdf # simple pdf viewer
 )
 text_aur=(          
     typora          # markdown editor
-    # festvox-ru      # text to speach (TTS)
+    festvox-ru      # text to speach (TTS)
 )
 
 
@@ -170,7 +170,7 @@ network=(
     freerdp         # remote desktop protocol (RDP)
     krdc            # remote desktop client (RPD) (KDE)
     remmina         # remote desktop client (VNC/RPD/temviewer/rustdesk and more)
-    # moonlight-qt sunshine # fast remote desktop client/server for nvidia GPU
+    moonlight-qt sunshine # fast remote desktop client/server for nvidia GPU
     gwakeonlan      # utility to awake machines using the Wake on LAN
     sshfs           # mounting remote directories over a SSH 
 )
@@ -436,7 +436,8 @@ iot=(
 )
 iot_aur=(          
     lgtv-git        # remote control LG TV
-    # hypernion     # philips hue ambilight 
+    hypernion     # philips hue ambilight
+    arduino-ide-bin  # arduino IDE
 )
 
 
