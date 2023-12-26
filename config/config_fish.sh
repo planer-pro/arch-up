@@ -3,7 +3,7 @@
 
 # e - stop script if error
 # u - stop script if using uninitialized variable
-set -eu 
+set -eu
 
 # set colors
 NC=$(tput sgr0)
@@ -26,12 +26,17 @@ ERR="[${RED}ERR!${NC}]"
 HEADER="${BLUE}\n--------------------------------------------------------------${NC}\n"
 
 # cd to script directory
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 cd "$SCRIPT_DIR" || exit
 
 # ---------------------------------------------------------------------
 
 echo -e "$HEADER Configuring fish $HEADER"
+
+if ! command -v fish &> /dev/null; then
+    echo -e "$NOTE Fish is not installed. Skipping."
+    exit 0
+fi
 
 # prompt
 sudo pacman -S --needed --noconfirm starship
@@ -41,6 +46,11 @@ sudo pacman -S --needed --noconfirm fisher
 
 # lf file manager icons
 fish -c "fisher install joshmedeski/fish-lf-icons"
+
+# utils
+sudo pacman -S --needed --noconfirm zoxide broot xplr atuin
+yay -S --mflags --skipinteg --needed --quiet --answerdiff=None --nopgpfetch --nodiffmenu --norebuild --noredownload \
+	walk-bin
 
 mkdir -p ~/.config/fish
 cp fish/* ~/.config/fish/

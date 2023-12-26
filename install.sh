@@ -10,29 +10,40 @@ manuals=(
 )
 
 shell=(             
-    # alacritty     # lightweight terminal
-    fish fisher     # user friendly shell (bash alternative)
+    alacritty     # lightweight terminal
+    kitty         # lightweight terminal
+    fish fisher   # user friendly shell (bash alternative)
+    nushell       # a new type of shell (bash alternative)
     zsh zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting zsh-theme-powerlevel10k zshdb # user friendly shell (bash alternative)
+    tmux           # terminal multiplexer
+    atuin          # shell history manager
+    pueue          # run tasks in parallel or queue them
 )
 
 cli_tools=(    
     bat             # display file content with colors (cat alternative)
     exa             # list files (ls alternative)
     ripgrep         # grep alternative
-    lsd             # list files (ls alternative)
-    tree            # directory listing
     pv              # monitoring the progress of data through a pipeline
+    sd              # find and replace in files tool
+    zoxide          # cd alternative
+    wl-clipboard    # clipboard tool for wayland (required for nvim to use clipboard)
+    trash-cli       # trash files from terminal
+    xorg-xkill      # kill processes using xkill command
 )
 
 cli_tools_aur=(
-    cp-p-git        # cp alternative (with progress)
-    advcpmv         # cp alternative (with progress bar)
-    rmtrash         # use trash from cli
+    cp-p-git        # cp-p, mv-p - cp/mv alternative (with progress)
+    advcpmv         # advcp, advmv - cp/mv alternative (with progress
+    pipe-rename-git # batch rename files in default editor
+    rnr-bin         # batch rename files
+    hwatch          # watch alternative
 )
 
 cli_file_managers=(          
-    ranger          # file manager
-    lf              # file manager
+    xplr            # file manager
+    broot           # fast file naviagtion and operations in terminal
+    yazi            # file manager
 )
 
 cli_text_editors=(          
@@ -49,17 +60,18 @@ cli_system_monitoring=(
     s-tui           # system monitor
     zenith          # system monitor
     bottom          # system monitor (btm)
-    iftop           # network usage monitor
-    duf             # disk usage/free info (df alternative)
-    ncdu            # disk usage monitor (du alternative)
-    nethogs         # network usage monitor
+    dstat           # system monitor 
+    duf             # disk usage info (df alternative)
+    dua-cli         # folder size info (du alternative)
+    gdu             # folder size info (du alternative)
+    dust            # folder size info (du alternative)
     nmap            # tool for showing open ports
     nvtop           # GPU usage monitor
-    traceroute      # network route tracking tool
 )
 
 cli_system_monitoring_aur=(         
-    gotop-bin           # system monitor
+    gotop-bin       # system monitor
+    btsdu-git       # btrfs snapshot disk usage analyzer 
 )
 
 cli_system_info=(          
@@ -72,6 +84,7 @@ archivers=(
     zip unzip       # archiver
     unrar           # archiver
     cdrtools        # mkisofs tool for creating iso images
+    ouch            # archiver (tar .zip .gz .xz, .lzma .bz, .bz2 .lz4 .sz .zst)
 )
 
 code_compiling=(         
@@ -81,21 +94,28 @@ code_compiling=(
     lazygit         # terminal UI for git
     ninja           # code compile and build tool
     python-pip      # tool for installing python packages
+    rust            # code compile and build tool
 )
 
 file_systems=(          
     exfat-utils     # utilities for exFAT file system
     ntfs-3g         # NTFS filesystem driver and utilities
+    btrfs-progs     # btrfs filesystem driver and utilities
 )
 
 backup=(          
     unison          # file synchronization and backup tool
     rsync           # file copying and backup tool
+    grub-btrfs      # auto update grub menu with btrfs snapshots
+    snapper         # btrfs snapshot manager
+    snap-pac        # pacman hook for automated snapshots
 )
 backup_aur=(      
     freefilesync-bin  # file synchronization and backup tool
     # timeshift     # GUI for disk snapshots
     downgrade       # bash script for downgrading packages to a version in cache
+    btrfs-assistant # GUI for btrfs management and snapper 
+    snap-pac-grub   # auto upadate grub menu when snsp-pac creates snapshots
 )
 
 find_files=(
@@ -162,6 +182,11 @@ text_aur=(
 
 
 network=(         
+    nethogs         # network usage monitor
+    bandwhich       # network usage monitor
+    iftop           # network usage monitor
+    traceroute      # network route tracking tool
+    trippy          # network route tracking tool
     curl            # http requests and download manager
     aria2           # download manager (HTTP, FTP, BitTorrent)
     wget            # download manager
@@ -173,10 +198,15 @@ network=(
     moonlight-qt sunshine # fast remote desktop client/server for nvidia GPU
     gwakeonlan      # utility to awake machines using the Wake on LAN
     sshfs           # mounting remote directories over a SSH 
+    gping           # ping with graph
+    bore            # tunneling internet protocols (share port on gray ip)
 )
 network_aur=(      
     xrdp            # remote desktop protocol (RDP) server 
     wsdd            # web service discovery (WSD) daemon for SMB/Samba
+    sfz-bin         # simple web server for serving files
+    ngrok           # tunneling internet protocols (share port on gray ip)
+    termscp-bin     # TUI util for file transfering over SCP/SFTP/FTP/S3/SMB
 )
 
 
@@ -236,6 +266,7 @@ video_players=(
 video_players_aur=(      
     vlc-pause-click-plugin  # vlc plugin 
     vlc-bittorrent          # vlc plugin 
+    webtorrent-mpv-hook     # mpv plugin for watching torrents
     # vlc-materia-skin-git    # vlc theme
 )
 
@@ -280,8 +311,9 @@ vm=(
 
 
 fonts=(         
+    ttf-cascadia-mono-nerd # required for symbols like ⣀⣀⣀⣀⣀⣀⣀⣀ (graph in btop)
     ttf-ubuntu-font-family ttf-jetbrains-mono ttf-roboto # most used fonts
-    ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono   # requred fonts with icons
+    ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono # requred fonts with icons
 )
 
 
@@ -327,6 +359,7 @@ gaming_aur=(
 
 automation=(            
     inotify-tools   # watch file system changes in realtime
+    fzf             # fuzzy finder (file selection CLI tool)
     dconf-editor    # gsettings editor (for GNOME apps)
     d-spy           # d-bus debugger (for automation)
     xbindkeys       # launch commands with keyboard/mouse (for X11)
@@ -339,26 +372,32 @@ automation=(
 
 
 dev=(              
-    blender
-    glade
-    httpie
-    jdk-openjdk
-    meld
-    git-delta
-    nodejs
-    npm
-    pycharm-community-edition
-    qtcreator
+    blender         # 3D modelling
+    glade           # GUI builder for GTK+ applications
+    httpie          # http client
+    jdk-openjdk     # java development kit
+    meld            # diff compare
+    git-delta       # git diff in terminal
+    nodejs          # nodejs
+    npm             # nodejs package manager
+    pycharm-community-edition # python IDE
+    qtcreator       # qt IDE
+    sqlitebrowser   # sqlite database browser
 )
 dev_aur=(          
-    visual-studio-code-bin
-    clion
-    gitfiend
-    github-desktop-bin
+    visual-studio-code-bin  # vscode
+    clion clion-jre         # c++ IDE
+    gitfiend                # git clinet
+    github-desktop-bin      # git clinet
     # gittyup # not compiled
-    rider
-    smartgit
+    rider                   # IDE for Unreal Enigne and Unity
+    smartgit                # git clinet
+    rustrover rustrover-jre # rust IDE
+    static-web-server-bin   # simple static web server
+    simple-http-server-bin  # simple static web server
     # webstorm
+    # required libraries for building KDE apps:
+    # extra-cmake-modules-git plasma5support-git kcoreaddons-git kunitconversion-git  kirigami2-git kconfig-git
 )
 
 
@@ -376,7 +415,9 @@ hardware=(
     smartmontools   # SMART info, SSD temperature sensors 
     ddcutil         # HDMI/DP display brightness control (not for notebooks)
     i2c-tools       # requred for ddcutil
-    iperf           # benchmark network
+    sysbench        # benchmark
+    stress          # stress test
+    iperf3          # benchmark network
     speedtest-cli   # benchmark internet
     kdiskmark       # benchmark disks
     mangohud        # FPS monitoring overlay
@@ -399,7 +440,7 @@ nvidia=(
     # nvidia-lts    # nvidia drivers for linux-lts kernel  (preinstalled by installer)
     # nvidia-dkms   # nvidia drivers for all other kernels (preinstalled by installer)
     nvidia-settings # nvidia settins app
-
+    lib32-nvidia-utils # 32 bit libraries requird for games
 )
 nvidia_aur=(       
     gwe             # tweaking nvidia GPU
@@ -465,6 +506,7 @@ INFO="[....]"
 NOTE="[${WHITE}NOTE${NC}]"
 OK="[${GREEN} OK ${NC}]"
 ACTN="[${CYAN}ACTN${NC}]"
+
 WARN="[${YELLOW}WARN${NC}]"
 ERR="[${RED}ERR!${NC}]"
 HEADER="${BLUE}\n--------------------------------------------------------------${NC}\n"
